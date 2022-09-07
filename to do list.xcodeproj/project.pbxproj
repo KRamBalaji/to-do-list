@@ -11,6 +11,7 @@
 		F7308CE928C8E56700C4E825 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7308CE828C8E56700C4E825 /* ContentView.swift */; };
 		F7308CEB28C8E56800C4E825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7308CEA28C8E56800C4E825 /* Assets.xcassets */; };
 		F7308CEE28C8E56800C4E825 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7308CED28C8E56800C4E825 /* Preview Assets.xcassets */; };
+		F7308CF628C8E65200C4E825 /* SampleToDoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7308CF428C8E65200C4E825 /* SampleToDoModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,8 @@
 		F7308CE828C8E56700C4E825 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F7308CEA28C8E56800C4E825 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7308CED28C8E56800C4E825 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F7308CF528C8E65200C4E825 /* SampleToDoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SampleToDoModel.xcdatamodel; sourceTree = "<group>"; };
+		F7308CF828C8E75C00C4E825 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +40,7 @@
 			children = (
 				F7308CE528C8E56700C4E825 /* to do list */,
 				F7308CE428C8E56700C4E825 /* Products */,
+				F7308CF728C8E75C00C4E825 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +59,7 @@
 				F7308CE828C8E56700C4E825 /* ContentView.swift */,
 				F7308CEA28C8E56800C4E825 /* Assets.xcassets */,
 				F7308CEC28C8E56800C4E825 /* Preview Content */,
+				F7308CF428C8E65200C4E825 /* SampleToDoModel.xcdatamodeld */,
 			);
 			path = "to do list";
 			sourceTree = "<group>";
@@ -65,6 +70,14 @@
 				F7308CED28C8E56800C4E825 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F7308CF728C8E75C00C4E825 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7308CF828C8E75C00C4E825 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +152,7 @@
 			files = (
 				F7308CE928C8E56700C4E825 /* ContentView.swift in Sources */,
 				F7308CE728C8E56700C4E825 /* to_do_listApp.swift in Sources */,
+				F7308CF628C8E65200C4E825 /* SampleToDoModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +351,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F7308CF428C8E65200C4E825 /* SampleToDoModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F7308CF528C8E65200C4E825 /* SampleToDoModel.xcdatamodel */,
+			);
+			currentVersion = F7308CF528C8E65200C4E825 /* SampleToDoModel.xcdatamodel */;
+			path = SampleToDoModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F7308CDB28C8E56700C4E825 /* Project object */;
 }
