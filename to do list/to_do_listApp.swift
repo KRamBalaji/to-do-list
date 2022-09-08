@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct to_do_listApp: App {
+    
+    let persistanceContainer = CoreDataManager.shared.persistanceContainer
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environment(\.managedObjectContext, persistanceContainer.viewContext)
         }
     }
 }

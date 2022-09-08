@@ -12,6 +12,7 @@
 		F7308CEB28C8E56800C4E825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7308CEA28C8E56800C4E825 /* Assets.xcassets */; };
 		F7308CEE28C8E56800C4E825 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7308CED28C8E56800C4E825 /* Preview Assets.xcassets */; };
 		F7308CF628C8E65200C4E825 /* SampleToDoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7308CF428C8E65200C4E825 /* SampleToDoModel.xcdatamodeld */; };
+		F7308D1C28CA499500C4E825 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7308D1B28CA499500C4E825 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F7308CED28C8E56800C4E825 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F7308CF528C8E65200C4E825 /* SampleToDoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SampleToDoModel.xcdatamodel; sourceTree = "<group>"; };
 		F7308CF828C8E75C00C4E825 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F7308D1B28CA499500C4E825 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		F7308CE528C8E56700C4E825 /* to do list */ = {
 			isa = PBXGroup;
 			children = (
+				F7308D1A28CA497400C4E825 /* Managers */,
 				F7308CE628C8E56700C4E825 /* to_do_listApp.swift */,
 				F7308CE828C8E56700C4E825 /* ContentView.swift */,
 				F7308CEA28C8E56800C4E825 /* Assets.xcassets */,
@@ -78,6 +81,14 @@
 				F7308CF828C8E75C00C4E825 /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7308D1A28CA497400C4E825 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F7308D1B28CA499500C4E825 /* CoreDataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 			files = (
 				F7308CE928C8E56700C4E825 /* ContentView.swift in Sources */,
 				F7308CE728C8E56700C4E825 /* to_do_listApp.swift in Sources */,
+				F7308D1C28CA499500C4E825 /* CoreDataManager.swift in Sources */,
 				F7308CF628C8E65200C4E825 /* SampleToDoModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
