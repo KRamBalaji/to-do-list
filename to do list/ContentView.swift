@@ -34,6 +34,23 @@ struct ContentView: View {
     
     @State private var title: String = ""
     @State private var selectedPriority: Priority = .medium
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(key: "dateCreated", ascending: false)]) private var allTasks: FetchedResults<Task>
+    
+    private func saveTask() {
+        
+        do {
+            let task = Task(context: viewContext)
+            task.title = title
+            task.priority = selectedPriority.rawValue
+            task.dateCreated = Date()
+            try viewContext.save()
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+        
+    }
     
     var body: some View {
         NavigationView{
@@ -49,13 +66,20 @@ struct ContentView: View {
                 }
                 .pickerStyle(.segmented)
                 Button("Save") {
-                    
+                    saveTask()
                 }
                 .padding(10)
                 .frame(maxWidth: .infinity)
                 .background(Color.blue)
                 .foregroundColor(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 10,style: .continuous))
+                
+                List {
+                    ForEach(allTasks) { task in
+                        Text(task.title ?? "")
+                    }
+                }
+                
                 Spacer()
             }
             .padding()
