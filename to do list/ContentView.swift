@@ -67,6 +67,32 @@ struct ContentView: View {
         }
     }
     
+    private func updateTask(_ task: Task) {
+        task.isFavorite = !task.isFavorite
+        
+        do {
+            try viewContext.save()
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    private func deleteTask(at offsets: IndexSet) {
+        
+        offsets.forEach { index in
+            let task = allTasks[index]
+            viewContext.delete(task)
+        }
+        
+        do {
+            try viewContext.save()
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     var body: some View {
         NavigationView{
             
@@ -90,6 +116,7 @@ struct ContentView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 10,style: .continuous))
                 
                 List {
+                    
                     ForEach(allTasks) { task in
                         HStack {
                             Circle()
@@ -98,8 +125,15 @@ struct ContentView: View {
                             Spacer()
                                 .frame(width: 20)
                             Text(task.title ?? "")
+                            Spacer()
+                            Image(systemName: task.isFavorite ? "heart.fill" : "heart")
+                                .foregroundColor(Color.red)
+                                .onTapGesture {
+                                    updateTask(task)
+                                }
                         }
                     }
+                    .onDelete(perform: deleteTask)
                 }
                 
                 Spacer()
