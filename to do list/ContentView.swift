@@ -52,6 +52,21 @@ struct ContentView: View {
         
     }
     
+    private func styleForPriority(_ value: String) -> Color {
+        let priority = Priority(rawValue: value)
+        
+        switch priority {
+        case .low:
+            return Color.green
+        case .medium:
+            return Color.orange
+        case .high:
+            return Color.red
+        default:
+            return Color.black
+        }
+    }
+    
     var body: some View {
         NavigationView{
             
@@ -76,7 +91,14 @@ struct ContentView: View {
                 
                 List {
                     ForEach(allTasks) { task in
-                        Text(task.title ?? "")
+                        HStack {
+                            Circle()
+                                .fill(styleForPriority(task.priority!))
+                                .frame(width: 15, height: 15)
+                            Spacer()
+                                .frame(width: 20)
+                            Text(task.title ?? "")
+                        }
                     }
                 }
                 
@@ -91,6 +113,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let persistedContainer = CoreDataManager.shared.persistanceContainer
+        ContentView().environment(\.managedObjectContext, persistedContainer.viewContext)
     }
 }
